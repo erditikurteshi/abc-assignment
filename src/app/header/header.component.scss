@@ -1,0 +1,19 @@
+.navbar {
+    color: #35393C;
+    text-decoration: none;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+
+    .menu-icon {
+        width: 35px;
+    }
+    .nav-item {
+        padding-left: 20px;
+        font-size: 20px;
+    }
+}
+a {
+    color: #35393C;
+    text-decoration: none;
+}
