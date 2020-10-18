@@ -10,8 +10,11 @@
     }
     .nav-item {
         padding-left: 20px;
-        font-size: 20px;
+        font-size: 15px;
     }
+       .navbar-nav {
+         flex-direction: row;
+       }
 }
 a {
     color: #35393C;

@@ -1,1 +1,67 @@
-<p>update works!</p>
+<div class="row">
+  <div class="col-md-12">
+    <h4 class="title">Update location</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+      <div class="card m-3">
+          <div  class="list-group list-group-flush">
+              <div class="list-group-item">
+                  <div class="form-row">
+                      <div class="form-group col-6">
+                          <label>Name</label>
+                          <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && updateForm.controls.name.errors }" />
+                          <div *ngIf="submitted && updateForm.controls.name.errors" class="invalid-feedback">
+                              <div *ngIf="updateForm.controls.name.errors.required">Name is required</div>
+                              <div *ngIf="updateForm.controls.name.errors.maxlength">Name shouldn't be longer than 20 characters</div>
+                          </div>
+                      </div>
+                      <div class="form-group col-6">
+                          <label>City</label>
+                          <select formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': submitted && updateForm.controls.city.errors }">
+                            <option value="" disabled selected>Choose city</option>
+                            <option *ngFor="let city of cities" [value]="city.city">{{city?.city}}</option>
+                        </select>
+                          <div *ngIf="submitted && updateForm.controls.city.errors" class="invalid-feedback">
+                              <div *ngIf="updateForm.controls.city.errors.required">City is required</div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-12">
+                        <label>Address</label>
+                        <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && updateForm.controls.address.errors }" />
+                        <div *ngIf="submitted && updateForm.controls.address.errors" class="invalid-feedback">
+                            <div *ngIf="updateForm.controls.address.errors.required">Address is required</div>
+                            <div *ngIf="updateForm.controls.name.errors.maxlength">Address shouldn't be longer than 50 characters</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-6">
+                      <label>Longitude</label>
+                      <input type="text" formControlName="longitude" class="form-control" [ngClass]="{ 'is-invalid': submitted && updateForm.controls.longitude.errors }" />
+                      <div *ngIf="submitted && updateForm.controls.longitude.errors" class="invalid-feedback">
+                          <div *ngIf="updateForm.controls.longitude.errors.required">Longitude is required</div>
+                      </div>
+                  </div>
+                  <div class="form-group col-6">
+                    <label>Latitude</label>
+                    <input type="text" formControlName="latitude" class="form-control" [ngClass]="{ 'is-invalid': submitted && updateForm.controls.latitude.errors }" />
+                    <div *ngIf="submitted && updateForm.controls.latitude.errors" class="invalid-feedback">
+                        <div *ngIf="updateForm.controls.latitude.errors.required">Latitude is required</div>
+                    </div>
+                </div>
+              </div>
+              </div>
+          </div>
+          <div class="card-footer text-center border-top-0">
+              <button class="btn btn-primary mr-1">Update</button>
+              <button class="btn btn-secondary" type="button" (click)="onCancel()">Cancel</button>
+          </div>
+      </div>
+  </form>
+  </div>
+</div>
