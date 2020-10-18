@@ -1,1 +1,42 @@
-<p>list works!</p>
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-success btn-create" routerLink="/create">Create</button>
+  </div>
+</div>
+<div class="table-container">
+  <ngx-datatable
+        class="material striped"
+        [rows]="locations"
+        [columnMode]="ColumnMode.force"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="50"
+        [limit]="10"
+      >
+        <ngx-datatable-column name="ID" [width]="30"></ngx-datatable-column>
+        <ngx-datatable-column name="Name">
+          <ng-template
+          ngx-datatable-cell-template
+          let-rowIndex="rowIndex"
+          let-value="value"
+          let-row="row"
+          let-group="group">
+          <a [routerLink]="['/location', row.id]" class="name-row">{{row.name}}</a>
+        </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Address"></ngx-datatable-column>
+        <ngx-datatable-column name="City"></ngx-datatable-column>
+        <ngx-datatable-column name="Longitude"></ngx-datatable-column>
+        <ngx-datatable-column name="Latitude"></ngx-datatable-column>
+        <ngx-datatable-column [sortable]="false">
+          <ng-template
+          ngx-datatable-cell-template
+          let-rowIndex="rowIndex"
+          let-value="value"
+          let-row="row"
+          let-group="group">
+          <button type="button" class="btn btn-danger btn-remove" (click)="removeLocation(row.id)">Remove</button>
+        </ng-template>
+        </ngx-datatable-column>
+    </ngx-datatable>
+</div>

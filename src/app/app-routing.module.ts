@@ -7,8 +7,9 @@ import { UpdateComponent } from './location/update/update.component';
 
 
 const routes: Routes = [
-  { path: '', component: LocationComponent },
-  { path: ':id', component: DetailsComponent },
+  { path: '', redirectTo: 'locations', pathMatch: 'full' },
+  { path: 'locations', component: LocationComponent },
+  { path: 'location/:id', component: DetailsComponent },
   { path: 'create', component: CreateComponent},
   { path: 'update/:id', component: UpdateComponent }
 ];

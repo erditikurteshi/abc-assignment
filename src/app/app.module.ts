@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 import { AppComponent } from './app.component';
 import { LocationComponent } from './location/location.component';
 import { ListComponent } from './location/list/list.component';
@@ -24,7 +27,9 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    NgxDatatableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

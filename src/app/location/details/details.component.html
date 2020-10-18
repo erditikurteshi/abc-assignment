@@ -1,1 +1,16 @@
-<p>details works!</p>
+<div class="details-container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="title">{{ location?.name }}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p><span class="property">City:</span> <span class="value">{{location?.city}}</span></p>
+      <p><span class="property">Address:</span> <span class="value">{{location?.address}}</span></p>
+      <p><span class="property">Longitude:</span> <span class="value">{{location?.longitude}}</span></p>
+      <p><span class="property">Latitude:</span> <span class="value">{{location?.latitude}}</span></p>
+      <button class="btn btn-primary">Edit</button>
+    </div>
+  </div>
+</div>
